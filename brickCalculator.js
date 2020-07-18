@@ -1,20 +1,25 @@
 function brickCalculator(floor){
     const brickPerFeet = 1000;
-    let floor1 = 10;
-    let floor2 = 10;
-    let floor3 = 10;
+    let building = 0;
     if(floor<= 10){
-        floor1 = brickPerFeet * 15 * floor;
-        return floor1;
+        building = floor * 15 * brickPerFeet;
+       
         }
-        else if(floor<=11){
-            floor2 = brickPerFeet * 12 * floor;
-            return floor1 + floor2;
+        else if(floor<=20){
+            let floor1 = 10 * 15 *brickPerFeet;
+            let remainingFloor = floor-10;
+            let floor2 = remainingFloor *12 * brickPerFeet;
+            building = floor1 + floor2;
         }
-        else if(floor<=21){
-            floor3 = brickPerFeet * 10 * floor;
-            return floor1 + floor2 + floor3;
-        }     
+        else{
+            let floor1 =  10 * 15 *brickPerFeet;
+            let floor2 = 10 * 12 * brickPerFeet;
+            let remainingFloor = floor-20;
+            let floor3 = remainingFloor * 10 * brickPerFeet;
+            building = floor1 + floor2 + floor3;
+        }   
+        return building;  
 }
-
+let result = brickCalculator(22);
+console.log(result);
    
